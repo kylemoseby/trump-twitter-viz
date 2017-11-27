@@ -1,0 +1,59 @@
+<div class="container-fluid" ng-controller="twitterCtrl">
+  <div class="row">
+    <div class="col-md-12">
+      <!--       <h2>User Info</h2>
+      <div class="jumbotron" style="{'background': url('{{user.profile_banner_url}}')}">
+        tweet count {{statuses.length}}
+        <br> profile_image_url_https <img ng-src="{{user.profile_image_url_https}}">
+        <br> profile_location {{user.profile_location}}
+        <br> followers_count {{user.followers_count}}
+        <br> description {{user.description}}
+        <br> friends_count {{user.friends_count}}
+        <br> name {{user.name}}
+         <br> lang {{user.lang}}
+        <br> screen_name {{user.screen_name}}
+        <br> url {{user.url}}
+         <br> status {{user.status}}
+         <br> statuses_count {{user.statuses_count}}
+        <br> profile_background_image_url_https <img ng-src="{{user.profile_background_image_url_https}}">
+        <br> profile_background_image_url <img ng-src="{{user.profile_background_image_url}}">
+        <br>
+        <div ng-show="user.verified">verified</div>
+        <div ng-show="user.needs_phone_verification">needs_phone_verification</div>
+      </div>
+ -->
+      <!-- <ul class="list-unstyled">
+        <li ng-repeat="(key, value) in user">{{key}} - {{value}}</li>
+      </ul>
+       -->
+      <!--       <h2>Trumps</h2>
+      <div ng-repeat="(key, user) in trumpUsers">
+        <ul class="list-unstyled">
+          <li><img ng-src="{{user.profile_image_url}}"> {{user.name}}</li>
+          <li>@{{user.screen_name}}</li>
+          <li>{{user.description}}</li>
+          <li>Created: {{user.created_at}}</li>
+          <li>Followers: {{user.followers_count}}</li>
+          <li>Followers: {{user.friends_count}}</li>
+          <li ng-show="user.verified">Verified</li>
+        </ul>
+      </div>
+ -->
+ <!-- ERROR MESSAGES -->
+ <div class="alert alert-warning alert-dismissible" role="alert" ng-show="error">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Warning!</strong> Something went wrong:<br>
+  {{error.status}} / {{error.statusText}} / {{error.data}}
+</div>
+ <!-- END ERROR MESSAGES -->
+      <h2>Statuses</h2>
+      <ul class="list-unstyled">
+        <li ng-repeat="tweet in statuses" ng-show="$index < _opts.ind">
+          <trump-tweet></trump-tweet>
+        </li>
+      </ul>
+      <p>Displaying {{_opts.ind}} in {{statuses.length}}</p>
+      <button type="button" class="btn btn-primary btn-lg" ng-click="_opts.ind = _opts.ind + _opts.step">Load more tweets</button>
+    </div>
+  </div>
+</div>
